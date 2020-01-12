@@ -3,7 +3,7 @@ const { NODE_ENV } = process.env;
 
 export const DATA_URL = (
   NODE_ENV === 'production'
-    ? 'ec2-3-8-192-48.eu-west-2.compute.amazonaws.com'
+    ? 'http://ec2-3-8-192-48.eu-west-2.compute.amazonaws.com'
     : 'http://localhost:8000'
 );
 
