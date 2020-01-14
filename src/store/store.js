@@ -15,13 +15,16 @@ const store = createStore(
       logger,
       sagaMiddleware,
     ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__({
-      actionSanitizer: action => ({
-        ...action,
-        type: action.type.toString(),
-      }),
-      serialize: true,
-    }),
+    (window.__REDUX_DEVTOOLS_EXTENSION__
+      ? window.__REDUX_DEVTOOLS_EXTENSION__({
+        actionSanitizer: action => ({
+          ...action,
+          type: action.type.toString(),
+        }),
+        serialize: true,
+      })
+      : args => args
+    )
   ),
 );
 
