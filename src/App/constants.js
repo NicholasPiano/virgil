@@ -1,12 +1,4 @@
 
-const { NODE_ENV } = process.env;
-
-export const DATA_URL = (
-  NODE_ENV === 'production'
-    ? 'https://www.grammteus.com'
-    : 'http://localhost:8000'
-);
-
 export const characters = {
   ";___": ";",
   "#___": "·",

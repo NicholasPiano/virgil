@@ -1,7 +1,6 @@
 
 import { put } from 'redux-saga/effects';
 
-import { DATA_URL } from '../../../../constants';
 import actions from '../actions';
 
 export function fulfill(isOk, data) {
@@ -20,7 +19,7 @@ export function parse(response) {
 
 function load(text) {
   return fetch(
-    `${DATA_URL}/greek/`,
+    `${process.env.REACT_APP_API_URL}/greek/`,
     {
       method: 'POST',
       headers: {},
