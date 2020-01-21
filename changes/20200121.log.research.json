@@ -1,0 +1,24 @@
+{
+  "type": "log",
+  "date": 20200121,
+  "description": "Some notes on the research phase",
+  "children": {
+    "things I didn't previously know": {
+      "pm2": {
+        "description": "PM2 node app daemoniser",
+        "children": {
+          "src": "https://pm2.keymetrics.io/docs/tutorials/pm2-nginx-production-setup",
+          "related guide": "https://react-server.io/docs/guides/production",
+          "nginx config": "As far as I can tell, the https request can be rerouted to a pm2 http server serving the build of the react app. This can be done from the same nginx config as the backend so they share a common certificate."
+        }
+      },
+      "aws amplify": "Just point at a public github repo"
+    },
+    "app design": {
+      "very basic": "I used patterns I previously knew such as redux-saga for requests. I should try out new patterns I have in mind, such as the queries model. I have to think about this in terms of the redux efficiency updating stuff, keeping in mind the problems discovered while building my work application."
+    },
+    "stuff to look up": {
+      "contexts": "How do react contexts update data associated with them?"
+    }
+  }
+}

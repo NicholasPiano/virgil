@@ -3,7 +3,8 @@ module.exports = {
   apps: [
     {
       name: 'virgil',
-      script: './node_modules/react-scripts/scripts/start.js',
+      script: 'serve',
+      args: '-s /home/ubuntu/virgil/build',
       instances: 0,
       exec_mode: 'cluster',
       watch: true,

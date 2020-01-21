@@ -1,0 +1,27 @@
+{
+  "type": "log",
+  "date": 20200121,
+  "description": "Deployment process for react app",
+  "children": {
+    "steps": {
+      "install npm": "sudo apt-get install npm",
+      "prepare yarn public key": "curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -",
+      "prepare yarn repo": "echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | sudo tee /etc/apt/sources.list.d/yarn.list",
+      "update": "sudo apt-get update",
+      "install yarn": "sudo apt-get install yarn",
+      "globally install pm2": "sudo yarn global install pm2 --prefix=/usr/local",
+      "run test with pm2": "pm2 start server.config.js",
+      "add nginx config for localhost:5555": [
+        "proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;",
+        "proxy_set_header X-Real-IP $remote_addr;",
+        "proxy_set_header Host $http_host;",
+        "proxy_http_version 1.1;",
+        "proxy_set_header Upgrade $http_upgrade;",
+        "proxy_set_header Connection \"upgrade\";",
+        "proxy_pass http://my_nodejs_upstream/;",
+        "proxy_redirect off;",
+        "proxy_read_timeout 240s;",
+      ]
+    }
+  }
+}
