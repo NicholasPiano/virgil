@@ -7,6 +7,7 @@ module.exports = {
       instances: 0,
       exec_mode: 'cluster',
       watch: true,
+      log_file: './combined.log',
       env: {
         NODE_ENV: 'production',
         PORT: '5555'
