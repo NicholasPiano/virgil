@@ -1,4 +1,10 @@
 {
   "header": "# Introduction",
-  "blurb": "The following is a demonstration of a text format for the transliteration of Greek text using ascii characters. It supports all diacritics used in Ancient Greek, allowing the encoding of well-known texts using only ascii. The character encodings are shown below:"
+  "headerText": "The following is a demonstration of a text format for the transliteration of Greek text using ascii characters. It supports all diacritics used in Ancient Greek, allowing the encoding of well-known texts using only ascii. The character encodings are shown below.",
+  "credits": "### Credits",
+  "creditsText": "This ascii-only text encoding is based on the concept by StJohn Piano at [edgecase.net](http://edgecase.net/). The original document can be found here: http://edgecase.net/pages/test_character_encodings.",
+  "api": "# API",
+  "apiText": "The API can be accessed at https://grammteus.com/greek/ with a `POST` request with a body of the form:\n ```json\n{\"text\": \"<text_to_be_transliterated>\"}\n```\nA response with either the key `response` or the key `error` will be received, and can be handled appropriately:\n```json\n{\"response\": \"<successful_transliteration_unicode>\"}\n```\n```json\n{\"error\": \"<error_text>\"}\n```",
+  "usage": "# Usage",
+  "usageText": "Typing characters into the textbox below will trigger a fuzzy match with the character set displayed at the bottom. The weighting is based on the presence of an alphanumeric character combined with order and position measurements. The highlighted grey box shows the character that will be added if the `enter` key is pressed. Pressing `enter` will also trigger a transliteration call to the server. While the textbox is focussed, navigate the grey box with the `arrow` keys."
 }
